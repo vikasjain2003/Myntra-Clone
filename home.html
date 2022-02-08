@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+</head>
+<style>
+    #logo_bar{
+       /* border: 1px solid red;*/
+        margin-top: 1.5%;
+        width: 96%;
+        display: inline-flex;
+        margin-left: 4%;
+    }
+    #logo_bar>#categories>h2{
+        margin-left: 2%;
+        font-family: monospace;
+        position: relative;
+        color: #3f3d3d;
+        font-size: 17px;
+    }
+    #logo>img{
+        width: 50px;
+        height: 35px;
+        margin-top: 8px;
+    }
+    .search{
+        display: inline-block;
+    float: left;
+    font-size: 14px;
+    height: 20px;
+    line-height: 24px;
+    width: 95%;
+    color: #696e79;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    padding: 8px 10px 10px;
+    margin: 0;
+    outline: 0;
+    border: 1px solid #f5f5f6;
+    border-radius: 0 4px 4px 0;
+    border-left: 0;
+    background: #f5f5f6;
+}
+#search{
+    margin-left: 17.5%;
+    width: 30%;
+    margin-top: 4px;
+}
+#invite_bar{
+    width: 100%;
+    height: 50px;
+    position: relative;
+    background-image: linear-gradient(
+90deg,#f9f9ff,#dee8ff);
+    margin: 0 auto;
+     display: inline-flex;
+}
+/*.invite_now{
+   
+    vertical-align: middle;
+    font-size: 14px;
+    color: #3e4152;
+    font-weight: 500;
+    opacity: .9;
+    text-align: left;
+    line-height: 1.3;
+    padding: 0 8px;
+    width: 300px;
+}*/
+#invite_bar>img{
+    width: 50px;
+        height: 50px;
+        margin-left: 410px;
+        
+}
+#invite_bar>div{
+
+    font-family: monospace;
+    opacity: .9;
+   text-align: left;
+    line-height: 1;
+    width: 400px;
+    font-size: 12px;
+    color: #3e4152;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    
+}
+#invite_btn{
+    
+    border-radius: 4px;
+    border: 1px solid #c9dafd;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .3px;
+    text-align: center;
+    height: 27px;
+    line-height: 1.25em;
+    color: #ff3f6c;
+    background: 0 0;
+    padding: 1px 5px 0 8px;
+    margin-top: 13px;
+
+}
+#bannr1>img{
+    margin-top: 40px;
+    width: 100%;
+}
+#bannr2>img{
+    margin-top: 40px;
+    width: 100%;
+}
+.text_container{
+    width: 100%;
+}
+.text_title {
+    text-transform: uppercase;
+    color: #3e4152;
+    letter-spacing: .15em;
+    font-size: 30px;
+    /*margin: 50px 0 10px 30px;*/
+    max-height: 5em;
+    font-weight: bolder;
+    font-family: monospace;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    opacity: 1;
+}
+#bannr3{
+width: 100%;
+display: inline-flex;
+margin-top: 30px;
+}
+#bannr3>img{
+    width: 17%;
+    margin-left: 2.5%;
+}
+#user_logo{
+    display: inline-flex;
+    margin-left: 25px;
+    padding-bottom: 10px;
+}
+#pro{
+height: 50px;
+width: 40px;
+margin-left: 15px;
+ font-size: 10px;
+    font-family: monospace;
+    font-weight: bolder;
+    
+    align-items: center;
+    
+
+}
+#pro>a>img{
+    height: 20px;
+width: 20px;
+margin-left: 8px;
+margin-top: 10px;
+ font-size: 10px;
+    font-family: monospace;
+    font-weight: bolder;
+    text-align: center;
+    
+}
+
+#wish{
+height: 50px;
+width: 40px;
+margin-left: 15px;
+ font-size: 10px;
+    font-family: monospace;
+    font-weight: bolder;
+    text-align: center;
+}
+#bag{
+height: 50px;
+width: 40px;
+margin-left: 15px;
+font-size: 10px;
+    font-family: monospace;
+    font-weight: bolder;
+    text-align: center;
+}
+ /*h6{
+    font-size: 10px;
+    font-family: monospace;
+    font-weight: bolder;
+    margin-bottom: 5px;*/
+
+
+
+#user_logo>div>img{
+    height: 18px;
+    width: 20px;
+    margin-left: 1px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+.popup .overlay{
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			width: 100vw;
+			height: 100vh;
+			background: rgba(0,0,0,0.7);
+			z-index: 1;
+			display: none;
+		}
+
+		.popup .content {
+			position: absolute;
+			top: 20%;
+			left: 90%;
+			transform: translate(-50%,-50%) scale(0);
+			background: #fff;
+			width: 200px;
+			height: 200px;
+			
+			
+			padding: 20px;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			box-shadow: 0 0 40px 20px rgba(0,0,0,0.1);
+		}
+
+		.popup.active .overlay{
+			display: blok;
+		}
+
+		.popup.active .content{
+			transition: all 300ms ease-in-out;
+			transform: translate(-50%, -50%) scale(1);
+		}
+
+		.popup.close-btn{
+			cursor: pointer;
+			position: absolute;
+			right: 20px;
+			width: 30px;
+			height: 30px;
+			background: #222;
+			color: #fff;
+			font-size: 25px;
+			margin-top: 120px;
+			text-align: center;
+			border-radius: 50%;
+		}
+
+		
+
+		#centr{
+			margin-top: 100px;
+
+		}
+
+		#data a{
+			display: flex;
+			flex-direction: column;
+			font-size: 12px;
+			line-height: 30px;
+			cursor: pointer;
+		}
+		#signin{
+			width: 100%;
+			background-color: #E91E63;
+			color: white;
+			padding: 5px;
+			cursor: pointer;
+		}
+        .model {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+#content {
+  background-color: #fefefe;
+  margin: auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  height: 50%;
+  margin-top: 205px;
+}
+.close1 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} 
+
+#reg{
+	display: flex;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	gap: 20px;
+	height: 10px;
+	
+	justify-content: center;
+}.line {
+             
+             padding-bottom: 20px;
+             border-bottom-style: solid  ;
+             border-bottom-width: 3.1px;
+             width: fit-content;
+             border-color: #C51162;
+             color: #C51162;
+             cursor: pointer;
+         }
+         #sub-categories{
+             display: flex;
+             flex-direction: column;
+         }
+ 
+         #sub-categories a{
+             font-family: poppins;
+             font-size: 14px;
+             line-height: 20px;
+             text-decoration: none;
+             color: #000;
+         }
+ 
+        
+ 
+        
+         h4{
+             text-transform: uppercase;
+         }
+ 
+         #sub-categories a:hover{
+             color: #C51162;
+         }
+          
+         #sub{
+             width: 300px;
+             height: 330px;
+             background-color:#eee;
+         }
+         #mybt:hover{
+       	text-decoration: underline 2px solid #F50057;
+	cursor: pointer;
+	color: #F50057;
+       }
+         .close{
+       	margin-right: 70px;
+       }#categories{
+	display: flex;
+	gap: 20px;
+	height: 50px;
+    width: 40%;
+	
+	margin-left: 30px;
+	position:sticky;
+	top: 0;
+	
+}
+
+
+
+#head{
+	font-size: 16px;
+	font-weight: 600;
+
+}
+
+ 
+
+
+
+    
+    
+</style>
+<body>
+<div id=logo_bar>
+    <div id="logo">
+        <img src="https://imgeng.jagran.com/images/2021/jan/Myntra-805x530-1-700x4611611985286383.jpg"/>
+    </div>
+    <div id="categories">
+    <h2 id="mybt"><i class="fas fa-bars"></i>Men</h2>
+    <h2 id="mybt"><i class="fas fa-bars"></i>Women</h2>
+    <h2 id="mybt"><i class="fas fa-bars"></i>Kids</h2>
+    <h2 id="mybt"><i class="fas fa-bars"></i>Home & Living</h2>
+    <h2 id="mybt"><i class="fas fa-bars"></i>Beauty</h2>
+</div>
+<div id="search">
+    <input placeholder="Search for products, brands and more" class="search" />
+</div>
+<div id="user_logo">
+    <div id="pro">
+  <a href="signup.html"  onmouseover="new1()">   <img src="https://image.flaticon.com/icons/png/512/20/20079.png"/></a>
+    Profile
+    <a href="#" id="face" onmouseover="new1()"><i class="far fa-smile fa-3x" id="face"></i></i></a>
+</div>
+<div id="wish">
+    <img src="https://cdn0.iconfinder.com/data/icons/squared-line-ecommerce-1/64/heart-512.png"/>
+Wishlist
+</div>
+<div id="bag">
+    <img src="https://www.pinclipart.com/picdir/middle/424-4242172_png-file-shopping-bag-icon-png-clipart.png"/>
+    Bag
+</div>
+</div>
+</div>
+<div id="invite_bar">
+<img src="https://constant.myntassets.com/pwa/assets/img/rupee_illustration.png"/>
+<div>
+<h3>Invite friends to Big Fashion Festival Sale & get up to ₹150 MynCash for every person who visits</h3>
+</div>
+<button id="invite_btn">Invite now ></button>
+</div>
+<div id="bannr1">
+    <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/9/24/a83a26c1-7c63-4aad-ae5c-c296c7e473901632501075885-main-banner-3-DK.jpg"/>
+</div>
+<div id="bannr2">
+<img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/9/24/a6ae8a21-c3cb-43c6-8fb2-d16878c337ec1632491529662-Download-App--Logo-with-Dates----Desktop.jpg"/>
+</div>
+<div class="text_container">
+    <h4 class="text_title">Deals Of The Day</h4>
+</div>
+<div id=bannr3>
+ <img src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/9/26/fb521a94-9562-4fcf-982d-f6355f8ce2bd1632664468276-BeautyBundles.jpg"/>
+ <img src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/9/26/e7c02508-fa16-4066-be41-111937badeeb1632664468250-Myntra-Unique-styles.jpg"/>
+ <img src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/9/26/c6a5ec95-d702-43c8-aade-1ececd4645341632664468223-festive-wear.jpg"/>
+ <img src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/9/26/106e7449-b447-4952-a11a-f8f70a14fbbd1632664468241-footwear--1-.jpg"/>
+ <img src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2021/9/26/c0fb1213-aefd-4729-8632-add01b6681821632664468232-watches.jpg"/>
+</div>
+<div class="popup" id="popup-1">
+    <div class="overlay"></div>
+    <div class="content" id="centr">
+        <!--<div class="close-btn">&times;</div> -->
+
+
+        <div id="data">
+
+
+
+
+            <button id="signin"><a href="signup.html" id="butt">Sign in</a></button>
+            <a href="signup.html">New customer? start here.</a>
+            <a>Your orders</a>
+            <a>Your account</a>
+            <a href="cart.html">Your wishlist</a>
+
+        </div>
+    </div>
+</div>
+<div id="mymode" class="model">
+
+    <!-- Modal content -->
+    <div id="content">
+        <span class="close1">&times;</span>
+        <div id="sub">
+            <div id="sub-categories">
+                <h4>Top wear</h4>
+                <a>T-Shirts</a>
+                <a>Casual Shirts </a>
+                <a>Formal Shirts</a>
+                <a>Sweat Shirts</a>
+
+
+            </div>
+        </div>
+
+    
+</body>
+
+</html>
+<script>
+    function new1() {
+		document.getElementById("popup-1").classList.toggle("active");
+
+	}
+
+</script>
